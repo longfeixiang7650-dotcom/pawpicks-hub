@@ -1,3 +1,6 @@
 {
-  "name": "ai-resource-hub"
+  "name": "pawpicks-hub",
+  "framework": "nextjs",
+  "buildCommand": "next build",
+  "outputDirectory": ".next"
 }
