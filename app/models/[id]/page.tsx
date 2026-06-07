@@ -17,7 +17,6 @@ export default function ModelDetailPage() {
   const resource = RESOURCE_MAP.get(id);
   const schemaInjected = useRef(false);
 
-  // Inject JSON-LD Schema
   useEffect(() => {
     if (!resource || schemaInjected.current) return;
     schemaInjected.current = true;
@@ -73,7 +72,6 @@ export default function ModelDetailPage() {
     );
   }
 
-  // Related models (same style)
   const relatedModels = ALL_RESOURCES.filter(
     (r) => r.style === resource.style && r.id !== resource.id
   ).slice(0, 4);
@@ -81,7 +79,6 @@ export default function ModelDetailPage() {
   return (
     <div className="relative pt-28 pb-20 px-6">
       <div className="max-w-4xl mx-auto">
-        {/* Back Link */}
         <Link
           href="/"
           className="inline-flex items-center text-[#8A7DBF] hover:text-[#7C3AED] transition-colors mb-8 text-sm"
@@ -89,7 +86,6 @@ export default function ModelDetailPage() {
           <ArrowLeft className="w-4 h-4 mr-2" /> Back to Hub
         </Link>
 
-        {/* Header */}
         <header className="mb-10">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-14 h-14 rounded-xl bg-[#1A1740] border border-[#2A2560] flex items-center justify-center">
@@ -121,7 +117,6 @@ export default function ModelDetailPage() {
           </p>
         </header>
 
-        {/* Quick Specs */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
           <div className="bg-[#12102A] border border-[#2A2560] rounded-xl p-4">
             <HardDrive className="w-5 h-5 text-[#7C3AED] mb-2" />
@@ -145,7 +140,6 @@ export default function ModelDetailPage() {
           </div>
         </div>
 
-        {/* Key Features */}
         <div className="mb-10">
           <h2 className="text-2xl font-bold text-[#EDE9FE] mb-6 flex items-center gap-2">
             <Star className="w-6 h-6 text-[#7C3AED]" />
@@ -164,7 +158,6 @@ export default function ModelDetailPage() {
           </div>
         </div>
 
-        {/* Pros & Cons */}
         <div className="grid md:grid-cols-2 gap-6 mb-10">
           <div className="bg-[#12102A] border border-[#2A2560] rounded-xl p-6">
             <h3 className="font-bold text-green-400 mb-4 flex items-center text-base">
@@ -194,7 +187,6 @@ export default function ModelDetailPage() {
           </div>
         </div>
 
-        {/* Compatibility */}
         <div className="mb-10">
           <h2 className="text-2xl font-bold text-[#EDE9FE] mb-6 flex items-center gap-2">
             <Layers className="w-6 h-6 text-[#7C3AED]" />
@@ -212,7 +204,6 @@ export default function ModelDetailPage() {
           </div>
         </div>
 
-        {/* Download CTA */}
         <div className="bg-gradient-to-r from-[#1A1740] to-[#12102A] border border-[#2A2560] rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h2 className="text-2xl font-bold text-[#EDE9FE] mb-2">
@@ -232,7 +223,6 @@ export default function ModelDetailPage() {
           </a>
         </div>
 
-        {/* Related Models */}
         {relatedModels.length > 0 && (
           <div className="mt-10">
             <h2 className="text-2xl font-bold text-[#EDE9FE] mb-6 flex items-center gap-2">
@@ -268,7 +258,6 @@ export default function ModelDetailPage() {
           </div>
         )}
 
-        {/* Footer note */}
         <div className="mt-10 text-center">
           <p className="text-xs text-[#6D5FA0]">
             This model is from the open-source community (CivitAI / HuggingFace). 
